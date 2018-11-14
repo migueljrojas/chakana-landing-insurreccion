@@ -1,3 +1,273 @@
 .home {
-    
+    &__hero {
+        background: url('/images/hero-texture.jpg');
+        background-size: cover;
+
+        &__data {
+            transform: translateY(15%);
+        }
+
+        &__logo {
+            @include img(70%);
+
+            img {
+                height: 100%;
+                transform: scale3d(1.2, 1.2, 1.2);
+            }
+        }
+
+        &__buttons {
+            @include padd;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include mq(sm) {
+                flex-direction: row;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            @include mq(md) {
+                @include padd;
+            }
+        }
+
+        &__button {
+            text-transform: uppercase;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 1px;
+            flex-grow: 1;
+            width: 100%;
+
+            @include mq(sm) {
+                width: auto;
+            }
+
+            &--buy {
+                background: $mainColor;
+                color: $white;
+                margin-bottom: 10px;
+
+                @include mq(sm) {
+                    margin-right: 15px;
+                    margin-bottom: 0;
+                }
+            }
+
+            &--download {
+                background: $white;
+                color: $mainColor;
+            }
+        }
+
+        &__image {
+            transform: translateY(20%);
+
+            @include mq(md) {
+                transform: translateY(15%);
+            }
+
+            img {
+                width: 100%;
+
+                @include mq(md) {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    &__main {
+        @include padd(bottom);
+        padding-top: 100px;
+        background: url('/images/white-texture.jpg');
+        background-size: cover;
+        font-family: $altFont;
+
+        &__info {
+            color: $mainColor;
+            width: 80%;
+            margin: 0;
+            padding-bottom: 20px;
+            line-height: 1.3;
+
+            @include mq(sm) {
+                padding-top: 20px;
+                padding-bottom: 0;
+            }
+
+            &:before {
+                content: '';
+                height: 1px;
+                background: $mainColor;
+                width: 30%;
+                display: block;
+                position: absolute;
+                bottom: 0;
+
+                @include mq(sm) {
+                    top: 0;
+                    bottom: auto;
+
+                }
+            }
+        }
+
+        &__text {
+            font-size: 16px;
+            padding-top: 20px;
+            line-height: 1.5;
+            color: $black;
+
+            strong {
+                color: $mainColor;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__interstitial {
+        @include padd(top);
+        @include padd(bottom, half);
+        background: url('/images/fucsia-texture.jpg');
+        background-size: cover;
+
+        &__text {
+            color: $white;
+            text-align: center;
+            font-family: altFont;
+            margin: 0 0 20px 0;
+            text-rendering: optimizeLegibility;
+            font-size: 24px;
+
+            strong {
+                font-weight: bold;
+            }
+
+            @include mq(sm) {
+                font-size: 30px;
+            }
+        }
+
+        &__arrow {
+            width: 25px;
+            height: 25px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 15px;
+            display: block;
+            transform: translateY(0);
+            animation: arrow 1s ease .3s forwards infinite;
+
+            span {
+                transform: rotate(-45deg);
+                width: 25px;
+                height: 25px;
+                border-left: 1px solid $white;
+                border-bottom: 1px solid $white;
+                display: block;
+            }
+        }
+    }
+
+    &__bio {
+        @include padd;
+        background: url('/images/hero-texture.jpg');
+        background-size: cover;
+
+        &__image {
+            @include img(140%);
+
+            @include mq(md) {
+                @include img(150%);
+
+                width: 120%;
+            }
+
+            img {
+                height: 100%;
+                padding-bottom: 50px;
+
+                @include mq(md) {
+                    padding-bottom: 0;
+                }
+            }
+        }
+        &__title {
+            text-transform: uppercase;
+            color: $white;
+            font-size: 18px;
+        }
+
+        &__name {
+            padding-bottom: 15px;
+            font-size: 40px;
+            font-family: $altFont;
+            color: $darkBlue;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: $white;
+
+            &:before {
+                content: '';
+                background: $darkBlue;
+                height: 1px;
+                width: 70px;
+                position: absolute;
+                top: -2.7%;
+            }
+
+            @include mq(sm) {
+                &:before {
+                    content: '';
+                    background: $darkBlue;
+                    height: 1px;
+                    width: 70px;
+                    position: absolute;
+                    top: 9%;
+                    transform: translateX(-90px);
+                    left: auto;
+                }
+            }
+        }
+    }
+
+    &__sponsors {
+        @include padd;
+        background: url('/images/white-texture.jpg');
+        background-size: cover;
+
+        &__image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 120px;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@keyframes arrow {
+    0%{
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

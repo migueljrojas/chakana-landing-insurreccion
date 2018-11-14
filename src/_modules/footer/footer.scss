@@ -1,3 +1,28 @@
 .footer {
-    
+    &__principal {
+        @include padd(both, half);
+        background: $darkestGray;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__text {
+            color: $white;
+            text-transform: uppercase;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__secondary {
+        padding: 15px 0;
+        background: $black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
 }
